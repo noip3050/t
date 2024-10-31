@@ -49,3 +49,11 @@ body {
     transform: scale(1.1); /* تكبير طفيف عند التفعيل */
     box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2), 0px 0px 10px rgba(0, 0, 0, 0.5); /* توهج خفيف */
 }
+
+
+.countdown {
+    font-size: 24px; /* حجم الخط */
+    color: #ffffff; /* لون النص أبيض */
+    text-align: center; /* محاذاة النص في المنتصف */
+    margin-top: 20px; /* مسافة بين العداد والإشارة */
+}
