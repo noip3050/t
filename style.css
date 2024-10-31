@@ -3,39 +3,49 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #1a1a1a; /* لون خلفية داكن */
-    color: #ffffff; /* لون النص أبيض */
+    background-color: #000000; /* خلفية داكنة أنيقة */
+    color: #ffffff;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
 .traffic-light {
     display: flex;
     flex-direction: column;
-    width: 100px;
-    height: 300px;
-    background-color: #333; /* لون صندوق الإشارة */
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* إضافة ظل لتحسين المظهر */
+    width: 120px;
+    padding: 15px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #131212, #1a1a1a); /* تدرج اللون لصندوق الإشارة */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5), -10px -10px 20px rgba(17, 17, 17, 0.1); /* ظلال ناعمة */
+    align-items: center;
 }
 
 .light {
     width: 80px;
     height: 80px;
-    margin: 10px auto;
     border-radius: 50%;
-    opacity: 0.3;
-    transition: opacity 0.3s; /* تحسين تأثير الانتقال */
+    margin: 10px 0;
+    opacity: 0.2;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.5);
 }
 
-.red { background-color: #ff2121; }
-.yellow { background-color: #ffd015; }
-.green { background-color: #10ff5f; }
-.active { opacity: 1; }
-.traffic-light {
-    display: flex;
-    flex-direction: column; /* وضع العناصر في عمود */
-    align-items: center; /* محاذاة العناصر في المنتصف */
-    margin: 20px;
+/* الألوان */
+.red {
+    background: radial-gradient(circle, rgb(172, 28, 21) 0%, rgb(255, 8, 0) 70%);
 }
 
+.yellow {
+    background: radial-gradient(circle, rgb(90, 75, 7) 0%, rgb(255, 217, 0) 70%);
+}
 
+.green {
+    background: radial-gradient(circle, rgb(11, 100, 33) 0%, rgb(0, 255, 76) 70%);
+}
+
+/* تأثير الإشارة النشطة */
+.active {
+    opacity: 1;
+    transform: scale(1.1); /* تكبير طفيف عند التفعيل */
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2), 0px 0px 10px rgba(0, 0, 0, 0.5); /* توهج خفيف */
+}
