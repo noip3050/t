@@ -21,6 +21,12 @@ function updateTrafficLight() {
     
     // حساب بداية العد بناءً على الساعة 11:31:46 مساءً
     const startTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), startHour, startMinute, startSecond);
+    
+    // إذا كانت الساعة الحالية أقل من نقطة البداية، يجب الانتقال إلى اليوم السابق
+    if (now < startTime) {
+        startTime.setDate(startTime.getDate() - 1); // تراجع يوم واحد
+    }
+    
     const elapsedSeconds = Math.floor((now - startTime) / 1000); // حساب الزمن المنقضي بالثواني
 
     // حساب الدورة الزمنية الكاملة
