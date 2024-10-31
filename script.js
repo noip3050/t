@@ -10,9 +10,27 @@ const startMinute = 31;
 const startSecond = 46;
 
 // دالة لتفعيل اللون
-function activateColor(color) {
+function activateColor(color, duration) {
     document.querySelectorAll('.light').forEach(light => light.classList.remove('active'));
     document.getElementById(color).classList.add('active');
+
+    // تعيين العداد التنازلي
+    document.getElementById('countdown').textContent = duration; // تعيين الوقت المبدئي
+    startCountdown(duration);
+}
+
+// دالة لبدء العد التنازلي
+function startCountdown(duration) {
+    let countdown = duration;
+    const countdownInterval = setInterval(() => {
+        countdown--;
+        document.getElementById('countdown').textContent = countdown;
+
+        // إذا انتهى العد، أوقف العد
+        if (countdown <= 0) {
+            clearInterval(countdownInterval);
+        }
+    }, 1000);
 }
 
 // دالة لتحديد اللون الحالي بناءً على التوقيت الفعلي
@@ -34,11 +52,11 @@ function updateTrafficLight() {
     const positionInCycle = elapsedSeconds % cycleTime;
 
     if (positionInCycle < timings.redDuration) {
-        activateColor('red');
+        activateColor('red', timings.redDuration - positionInCycle);
     } else if (positionInCycle < timings.redDuration + timings.greenDuration) {
-        activateColor('green');
+        activateColor('green', timings.greenDuration - (positionInCycle - timings.redDuration));
     } else {
-        activateColor('yellow');
+        activateColor('yellow', timings.yellowDuration - (positionInCycle - (timings.redDuration + timings.greenDuration)));
     }
 }
 
