@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1a1a1a; /* لون خلفية داكن */
+    color: #ffffff; /* لون النص أبيض */
+}
+
+.traffic-light {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    height: 300px;
+    background-color: #333; /* لون صندوق الإشارة */
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* إضافة ظل لتحسين المظهر */
+}
+
+.light {
+    width: 80px;
+    height: 80px;
+    margin: 10px auto;
+    border-radius: 50%;
+    opacity: 0.3;
+    transition: opacity 0.3s; /* تحسين تأثير الانتقال */
+}
+
+.red { background-color: #ff2121; }
+.yellow { background-color: #ffd015; }
+.green { background-color: #10ff5f; }
+.active { opacity: 1; }
+.traffic-light {
+    display: flex;
+    flex-direction: column; /* وضع العناصر في عمود */
+    align-items: center; /* محاذاة العناصر في المنتصف */
+    margin: 20px;
+}
+
+
